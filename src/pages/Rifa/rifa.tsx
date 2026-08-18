@@ -127,13 +127,13 @@ export const Rifa = () => {
     raffle?.description ??
     'Rifa a beneficio de Maida, deportista destacada en ciclismo. Buscamos recaudar para nuevos componentes para su bicicleta.'
   const backgroundImage = raffle?.backgroundImage ?? '/background.jpg'
-  const personImage = raffle?.personImage ?? '/maida.svg'
+  const personImage = raffle?.personImage ?? '/cyclist.png'
   const prizes = raffle?.prizes?.length
     ? raffle.prizes
     : fallbackPrizes
 
   return (
-    <main className="min-h-screen bg-neutral-950 text-white">
+    <main className="max-w-4xl mx-auto min-h-screen bg-neutral-950 text-white">
       <div className="relative min-h-screen overflow-hidden">
         
         <div
@@ -190,35 +190,16 @@ export const Rifa = () => {
 
             <section className="mx-auto mt-10 grid max-w-6xl gap-6 lg:grid-cols-2">
 
-                <div className="relative aspect-square overflow-hidden rounded-3xl border border-amber-900/70 bg-black/40 shadow-2xl backdrop-blur-sm">
-
+              <div className="relative aspect-square mx-auto overflow-hidden rounded-3xl">
                 <img
-                    src={personImage}
-                    alt="Maida, deportista de ciclismo"
-                    className="h-full w-full object-cover"
+                  src={personImage}
+                  alt="Maida, deportista de ciclismo"
+                  className="h-full w-full object-cover"
                 />
+                
+              </div>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-
-                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
-
-                    <div className="flex items-center gap-2">
-                    <Icon
-                        name="solar:bicycling-round-bold-duotone"
-                        width={26}
-                        height={26}
-                        className="text-amber-300"
-                    />
-
-                    <span className="font-bold text-white">
-                        Maida · Ciclismo
-                    </span>
-                    </div>
-
-                </div>
-                </div>
-
-                <PrizeList prizes={prizes} />
+              <PrizeList prizes={prizes} />
 
             </section>
 
@@ -230,24 +211,24 @@ export const Rifa = () => {
 
                 <div className="mb-4 flex justify-center">
 
-                <div className="flex items-center gap-3 rounded-full border border-amber-700/70 bg-black/60 px-5 py-2.5 shadow-xl backdrop-blur-md">
+                  <div className="flex items-center gap-3 rounded-full border border-amber-700/70 bg-black/60 px-5 py-2.5 shadow-xl backdrop-blur-md">
 
-                    <Icon
-                    name="solar:tag-price-bold-duotone"
-                    width={23}
-                    height={23}
-                    className="text-amber-300"
-                    />
+                      <Icon
+                      name="solar:tag-price-bold-duotone"
+                      width={23}
+                      height={23}
+                      className="text-amber-300"
+                      />
 
-                    <span className="text-sm text-white/70">
-                    Valor por número
-                    </span>
+                      <span className="text-sm text-white/70">
+                      Valor por número
+                      </span>
 
-                    <strong className="text-lg font-black text-amber-300">
-                    ${price.toLocaleString('es-CL')}
-                    </strong>
+                      <strong className="text-lg font-black text-amber-300">
+                      ${price.toLocaleString('es-CL')}
+                      </strong>
 
-                </div>
+                  </div>
 
                 </div>
 
