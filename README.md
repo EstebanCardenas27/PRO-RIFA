@@ -59,9 +59,9 @@ Variables relevantes en `backend/.env`:
 PORT=4000
 DATABASE_URL="postgresql://USUARIO:CONTRASENA@ep-XXXX.region.aws.neon.tech/neondb?sslmode=require"
 TEST_DATABASE_URL="postgresql://USUARIO:CONTRASENA@ep-XXXX.region.aws.neon.tech/neondb_test?sslmode=require"
-ADMIN_USERNAME=admin
-ADMIN_PASSWORD=admin123
-JWT_SECRET=cambia-este-secreto-en-produccion
+ADMIN_USERNAME=****
+ADMIN_PASSWORD=****
+JWT_SECRET=****
 FRONTEND_ORIGIN=http://localhost:5173
 COOKIE_SECURE=false   # true solo en HTTPS/producción
 ```
