@@ -135,8 +135,7 @@ export const Rifa = () => {
   return (
     <main className="min-h-screen bg-neutral-950 text-white">
       <div className="relative min-h-screen overflow-hidden">
-
-        {/* Fondo */}
+        
         <div
           className="fixed inset-0 bg-cover bg-no-repeat bg-center"
           style={{
@@ -146,9 +145,8 @@ export const Rifa = () => {
 
         <div className="fixed inset-0 bg-black/70" />
 
-        <div className="fixed inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90" />
-
-        {/* Contenido */}
+        <div className="fixed inset-0 bg-linear-to-b from-black/40 via-black/60 to-black/90" />
+        
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
             <div className="mb-6 flex justify-end">
                 <Link
@@ -164,7 +162,7 @@ export const Rifa = () => {
                     Ingresar
                 </Link>
             </div>
-          {/* HEADER */}
+          
             <header className="mx-auto max-w-4xl text-center">
 
                 <div className="mb-4 flex items-center justify-center gap-3">
@@ -190,10 +188,8 @@ export const Rifa = () => {
 
             </header>
 
-            {/* FOTO + PREMIOS */}
             <section className="mx-auto mt-10 grid max-w-6xl gap-6 lg:grid-cols-2">
 
-                {/* FOTO MAIDA */}
                 <div className="relative aspect-square overflow-hidden rounded-3xl border border-amber-900/70 bg-black/40 shadow-2xl backdrop-blur-sm">
 
                 <img
@@ -222,7 +218,6 @@ export const Rifa = () => {
                 </div>
                 </div>
 
-                {/* PREMIOS */}
                 <PrizeList prizes={prizes} />
 
             </section>
@@ -231,7 +226,6 @@ export const Rifa = () => {
                 <RifaProgress numbers={numbers} />
             </section>
 
-            {/* PRECIO */}
             <section className="mx-auto mt-8 max-w-6xl">
 
                 <div className="mb-4 flex justify-center">
@@ -257,7 +251,6 @@ export const Rifa = () => {
 
                 </div>
 
-                {/* TABLERO */}
                 <NumberBoard
                 numbers={numbers}
                 onNumberClick={handleNumberClick}
@@ -265,7 +258,6 @@ export const Rifa = () => {
 
             </section>
 
-            {/* SELECCIÓN */}
             <section className="mx-auto mt-6 max-w-6xl">
 
                 <SelectionSummary
@@ -286,7 +278,6 @@ export const Rifa = () => {
 
             </section>
 
-            {/* INFORMACIÓN DEL SORTEO */}
             <section className="mx-auto mt-8 max-w-3xl text-center">
 
                 <div className="rounded-2xl border border-white/10 bg-black/40 p-5 backdrop-blur-md">
@@ -313,7 +304,6 @@ export const Rifa = () => {
 
             </section>
 
-            {/* FOOTER */}
             <footer className="py-10 text-center text-xs text-white/30">
                 RIFA · Apoyo al deporte y al ciclismo
             </footer>
