@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum NumberStatus {
+  AVAILABLE
+  PENDING
+  SOLD
+}
+
+model Raffle {
+  id              Int            @id @default(autoincrement())
+  title           String
+  description     String
+  price           Int
+  raffleDate      DateTime
+  backgroundImage String?
+  personImage     String?
+  contactWhatsApp String?
+  active          Boolean        @default(true)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  numbers         RaffleNumber[]
+  prizes          Prize[]
+}
+
+model RaffleNumber {
+  id           Int          @id @default(autoincrement())
+  raffleId     Int
+  raffle       Raffle       @relation(fields: [raffleId], references: [id], onDelete: Cascade)
+  number       Int
+  status       NumberStatus @default(AVAILABLE)
+  customerName String?
+  customerPhone String?
+  selectedAt   DateTime?
+  soldAt       DateTime?
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  @@unique([raffleId, number])
+  @@index([raffleId])
+}
+
+model Prize {
+  id          Int    @id @default(autoincrement())
+  raffleId    Int
+  raffle      Raffle @relation(fields: [raffleId], references: [id], onDelete: Cascade)
+  position    Int
+  description String
+  icon        String
+
+  @@unique([raffleId, position])
+  @@index([raffleId])
+}
+
+model Admin {
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
