@@ -1,6 +1,6 @@
 # PRO-RIFA
 
-Aplicación de rifa solidaria a beneficio de Maida, deportista de ciclismo.
+Aplicación de rifa.
 Incluye una página pública para elegir números y reservar por WhatsApp, y un
 panel de administración para gestionar ventas.
 
